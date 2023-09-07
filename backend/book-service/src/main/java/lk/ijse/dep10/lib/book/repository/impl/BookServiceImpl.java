@@ -58,6 +58,6 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<BookDTO> getAllBook(String query) {
-       return bookRepository.findBooksByQuery(query).stream().map(book->modelMapper.map(book,BookDTO.class)).collect(Collectors.toList());
+       return bookRepository.findByQuery(query).stream().map(book->modelMapper.map(book,BookDTO.class)).collect(Collectors.toList());
     }
 }
